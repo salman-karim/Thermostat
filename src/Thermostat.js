@@ -1,9 +1,10 @@
 var Thermostat = function(){
   this.temperature = 20;
+  this.powerSave = true;
 };
 
 Thermostat.prototype.increase = function() {
-  if(this.temperature === 25) {
+  if(this.temperature === 25 && this.powerSave === true) {
     return "maximum temperature is 25 degrees";
   } else {
     return this.temperature += 1;
