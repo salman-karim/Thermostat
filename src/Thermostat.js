@@ -24,3 +24,8 @@ Thermostat.prototype.decrease = function() {
 Thermostat.prototype.powerSaveSwitch = function() {
   this._powerSave = false;
 };
+
+Thermostat.prototype.reset = function() {
+  this.temperature = 20;
+
+};
