@@ -2,18 +2,31 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Thermostat</title>
+  <center><title>Thermostat</title>
+
+<link rel="stylesheet" type="text/css" href="./stylesheets/index.css">
 
 </head>
 
+
+
 <body>
-<h1>Temperature</h1>
-<p id="temp">...</p><p>degrees celcius</p>
-<button type="button" id="up-button">D</button>
-<button type="button" id="down-button">U</button>
+<h1>Thermostat</h1>
+<p><span id="temp">...</span> °C</p>
+
+
+  <p>
+  <button type="button" id="up-button">U</button>
+  <button type="button" id="down-button">D</button>
+  </p>
+  <button type="button" id="reset">Reset</button>
+  </p>
+  <p id="powersave">
+  Power Save: <input type="checkbox" id="power-save">
+  </p>
 </body>
 
   <script src="javascripts/Thermostat.js"></script>
   <script src="javascripts/app.js"></script>
-
+</center>
 </html>
