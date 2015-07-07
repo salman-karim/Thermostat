@@ -6,7 +6,11 @@ temp.innerHTML = thermostat.temperature;
 
 var up = element("up-button");
 
-up.onClick = thermostat.increase();
+up.onClick = thermostat.increase;
+
+var down = element("down-button");
+
+down.onClick = thermostat.decrease();
 
 // function myFunction() {
 //   document.getElementById("temp").innerHTML = thermostat.temperature;
