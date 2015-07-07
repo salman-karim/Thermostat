@@ -3,9 +3,17 @@ var Thermostat = function(){
 };
 
 Thermostat.prototype.increase = function() {
-  return this.temperature += 1;
+  if(this.temperature === 25) {
+    return "maximum temperature is 25 degrees";
+  } else {
+    return this.temperature += 1;
+  }
 };
 
 Thermostat.prototype.decrease = function() {
-  return this.temperature -= 1;
+  if(this.temperature === 10) {
+    return "minimum temperature is 10 degrees";
+  } else {
+    return this.temperature -= 1;
+  }
 };
