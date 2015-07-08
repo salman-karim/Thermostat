@@ -5,6 +5,8 @@
   <center><title>Thermostat</title>
 
 <link rel="stylesheet" type="text/css" href="./stylesheets/index.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 
 </head>
 
@@ -25,6 +27,18 @@
   Power Save: <input type="checkbox" id="power-save">
   </p>
 </body>
+
+<div id="cityweather">
+</div>
+
+
+  <div id="cityselect">
+    Please enter your city to receive current weather:&nbsp;&nbsp;&nbsp;
+    <form>
+      <input type="text" id="cityinput">
+      <input type="button" id="citysubmit" value="Submit"> 
+    </form>
+  </div>
 
   <script src="javascripts/Thermostat.js"></script>
   <script src="javascripts/app.js"></script>

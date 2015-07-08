@@ -1,21 +1,23 @@
 thermostat = new Thermostat();
 
-var temp = document.getElementById("temp");
+var city = 'London';
 
-temp.innerHTML = thermostat.temperature;
+$('#temp').html(thermostat.temperature);
 
 refreshDisplay();
 
+
 function refreshDisplay () {
-  document.getElementById("temp").innerHTML = thermostat.temperature;
-  document.getElementById("temp").style.color = thermostat.color();
+  var temp = $('#temp');
+  temp.html(thermostat.temperature);
+  temp.css({'color': thermostat.color()});
 }
 
-document.getElementById("power-save").onclick = function(){
+$('#power-save').click(function powerSaveMode(){
   thermostat.powerSaveSwitch();
-};
+});
 
-document.getElementById("up-button").onclick = function(){
+$('#up-button').click(function upTemp() {
   if (thermostat.temperature === 25 && thermostat._powerSave === true ){
     alert("The max temp is 25 with power save on");
   } else if(thermostat.temperature === 32 && thermostat._powerSave === false ) {
@@ -24,19 +26,35 @@ document.getElementById("up-button").onclick = function(){
     thermostat.increase();
     refreshDisplay();
   }
-};
+});
 
-document.getElementById("down-button").onclick = function(){
+$("#down-button").click(function downTemp() {
   thermostat.decrease();
   refreshDisplay();
-};
+});
 
-document.getElementById("reset").onclick = function(){
+$('#reset').click(function resetTemp() {
   thermostat.reset();
   refreshDisplay();
-};
+});
 
+function weather(){
+  var request = 'http://api.openweathermap.org/data/2.5/weather?q='.concat(city);
+  $.getJSON(request, function(data) {
+    $('#cityweather').html(Math.round(data.main.temp - 273.15));
+    });
+  }
 
+$('#citysubmit').click(function setCity(){
+  city = $('#cityinput').val();
+  weather();
+});
+  //
+  // function selectCity(){
+  //   var city =
+  // }
+
+  weather();
 
 // var down = element("down-button");
 //

@@ -23,3 +23,7 @@ p {
 #powersave {
   font-size: 15px;
 }
+
+form {
+  display: inline-block;
+}
