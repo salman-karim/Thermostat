@@ -36,8 +36,8 @@
 
   <div>
     Please enter your city to receive current weather:&nbsp;&nbsp;&nbsp;
-    <form action='/user' method='POST'>
-      <input type="text" id="cityinput">
+    <form action='/city'>
+      <input type="text" id="cityinput" name="cityinput">
       <input type="button" id="citysubmit" value="Submit">
     </form>
   </div>
@@ -48,7 +48,7 @@
   <span id="currentcityweather">
   </span>
 
-  <script src="javascripts/location.js"></script>
+  <script src="location.js"></script>
   <script src="javascripts/weather.js"></script>
   <script src="javascripts/Thermostat.js"></script>
   <script src="javascripts/app.js"></script>

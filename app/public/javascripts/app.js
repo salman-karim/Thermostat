@@ -40,8 +40,6 @@ $('#reset').click(function resetTemp() {
   refreshDisplay();
 });
 
-
-
 // function weather(){
 //   var request = 'http://api.openweathermap.org/data/2.5/weather?q='.concat(city);
 //   $.getJSON(request, function(data) {
