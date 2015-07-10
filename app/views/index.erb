@@ -15,7 +15,7 @@
 
 <body>
 <h1>Thermostat</h1>
-<p><span id="temp">...</span> °C</p>
+<p><span id="temp" data-value="<% @tempsetting %>"> <%= @tempsetting %> </span> °C </p>
 
 
   <p>
@@ -30,7 +30,7 @@
 </body>
 
 <div>
-  The weather in <span id="city"></span> is <span id="cityweather"></span>&#8451;
+  The weather in <span id="city"> <%= @city %> </span> is <span id="cityweather"></span>&#8451;
 </div>
 <br>
 
@@ -48,7 +48,7 @@
   <span id="currentcityweather">
   </span>
 
-  <script src="location.js"></script>
+  <script src="javascripts/location.js"></script>
   <script src="javascripts/weather.js"></script>
   <script src="javascripts/Thermostat.js"></script>
   <script src="javascripts/app.js"></script>

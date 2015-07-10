@@ -1,6 +1,6 @@
 var city;
 
-$('#city').html(city);
+// $('#city').html(city);
 
 function weather(){
   var request = 'http://api.openweathermap.org/data/2.5/weather?q='.concat(city);
@@ -10,26 +10,28 @@ function weather(){
     });
   }
 
-$('#citysubmit').click(function setCity(){
+$('#citysubmit').click(function (){
   city = $('#cityinput').val();
   weather();
+  $.post( '/city', { cityinput: city } );
 });
 
-$('#citysubmit').click(function(){
-  $.post('/city', { cityinput: "dubai" };
-  //
+//
+// $('#citysubmit').click(function(){
+//   $.post('/city', { cityinput: "dubai" });
+//   //
   // var storedCity = '/city?cityinput='.concat(city);
   // console.log(storedCity);
   // $.getJSON(storedCity, function(data) {
   //   city = data.city;
   //   console.log(city);
   // });
-});
 
-$('#temp').effect(function setCity(){
-  city = $('#cityinput').val();
-  weather();
-});
+
+// $('#temp').effect(function setCity(){
+//   city = $('#cityinput').val();
+//   weather();
+// });
 
 weather();
 

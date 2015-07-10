@@ -15,7 +15,7 @@
 
 <body>
 <h1>Thermostat</h1>
-<p><span id="temp">...</span> °C</p>
+<p><span id="temp"> <%= @temp %> </span> °C</p>
 
 
   <p>
@@ -30,7 +30,7 @@
 </body>
 
 <div>
-  The weather in <span id="city"></span> is <span id="cityweather"></span>&#8451;
+  The weather in <span id="city">@city</span> is <span id="cityweather"></span>&#8451;
 </div>
 <br>
 

@@ -1,18 +1,29 @@
 thermostat = new Thermostat();
 
-// var city = 'London';
-//
-$('#temp').html(thermostat.temperature);
-// $('#city').html(city);
+// $.get('/', function(data) {
+//    thermostat.temperature = @Session["tempsetting"];;
+//    }; )
 
 
-refreshDisplay();
+// $('#temp').html(thermostat.temperature);
 
+
+// refreshDisplay();
+
+var setTemp;
+
+setTemp = $('#temp').text();
+
+thermostat.temperature = parseInt(setTemp);
+console.log(thermostat.temperature);
+
+// refreshDisplay();
 
 function refreshDisplay () {
   var temp = $('#temp');
   temp.html(thermostat.temperature);
   temp.css({'color': thermostat.color()});
+  $.post('/temperature', { tempsetting: thermostat.temperature });
 }
 
 $('#power-save').click(function powerSaveMode(){
