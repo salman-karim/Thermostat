@@ -8,8 +8,8 @@ class Appweb < Sinatra::Base
 enable :sessions
 
   get '/' do
-    session[:city] ? @city = session[:city] : @city = 'London'
-    session[:tempsetting] ? @tempsetting = session[:tempsetting] : @tempsetting = 20
+    # session[:city] ? @city = session[:city] : @city = 'London'
+    # session[:tempsetting] ? @tempsetting = session[:tempsetting] : @tempsetting = 20
     erb :index
   end
 
@@ -28,12 +28,12 @@ enable :sessions
     session[:tempsetting] = temp
   end
 
-  # get '/settings' do
-  #   tempsetting = session[:tempsetting]
-  #   city = session[:city]
-  #   { city: city, tempsetting = tempsetting}.to_json
-  # end
-  #
+  get '/settings' do
+    tempsetting = session[:tempsetting]
+    city = session[:city]
+    { city: city, tempsetting: tempsetting}.to_json
+  end
+
 
 
 

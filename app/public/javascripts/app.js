@@ -1,8 +1,5 @@
 thermostat = new Thermostat();
 
-// $.get('/', function(data) {
-//    thermostat.temperature = @Session["tempsetting"];;
-//    }; )
 
 
 // $('#temp').html(thermostat.temperature);
@@ -10,14 +7,30 @@ thermostat = new Thermostat();
 
 // refreshDisplay();
 
-var setTemp;
+// var setTemp;
+//
+// setTemp = $('#temp').text();
+//
+// thermostat.temperature = parseInt(setTemp);
+// console.log(thermostat.temperature);
 
-setTemp = $('#temp').text();
 
-thermostat.temperature = parseInt(setTemp);
-console.log(thermostat.temperature);
+$.getJSON('/settings', function(data) {
+  if(data.tempsetting!=null){
+    thermostat.temperature = parseInt(data.tempsetting);
+    $('#temp').html(thermostat.temperature);
+  } else {
+  thermostat.temperature = 20;
+  $('#temp').html(thermostat.temperature);
+  //  city = data.city;
+ }
+ });
 
-// refreshDisplay();
+
+
+
+
+refreshDisplay();
 
 function refreshDisplay () {
   var temp = $('#temp');
